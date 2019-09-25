@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="custbean" class="com.capg.basic.Customer" scope="prototype">
+		<property name="name" value="purushotham"></property>
+	</bean>
+
+	<bean id="oracle" class="com.capg.database.DbConnection">
+		<property name="driver"
+			value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url"
+			value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+		<property name="userName" value="capg"></property>
+		<property name="password" value="oracle123"></property>
+	</bean>
+
+	<bean id="mysql" class="com.capg.database.DbConnection">
+		<property name="driver" value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/kpr"></property>
+		<property name="userName" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+
+	<bean id="placeHolderConfig"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="student.properties" />
+	</bean>
+	<bean id="student" class="com.capg.placeholder.Student">
+		<property name="name" value="${myname}"></property>
+		<property name="id" value="${id}"></property>
+	</bean>
+
+
+	<bean id="trainer" class="com.capg.placeholder.Trainer">
+		<property name="name" value="${myname}"></property>
+	</bean>
+
+
+
+</beans>
