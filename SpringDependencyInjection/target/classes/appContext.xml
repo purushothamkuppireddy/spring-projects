@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="dl" class="com.capg.autowiring.Demo">
+		 <property name="name" ><value>pavans</value></property>
+		<property name="id" value="123456"></property>
+		 <!--<constructor-arg value="Paavan"></constructor-arg>
+		<constructor-arg value="12345"></constructor-arg>-->
+	</bean>
+
+	<bean id="demo1" class="com.capg.autowiring.Demo1" autowire="constructor">
+		<property name="nm" value="ks"></property>
+	<!--<constructor-arg value="ks"></constructor-arg> 
+	<constructor-arg value="xcvd"></constructor-arg> -->
+	</bean>
+</beans>

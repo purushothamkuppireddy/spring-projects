@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="Studentbean1" class="com.capg.injection.Student">
+		<constructor-arg value="kpr"></constructor-arg>
+		<constructor-arg value="1234"></constructor-arg>
+	</bean>
+
+	<bean id="Studentbean2" class="com.capg.pack1.Student2">
+		<constructor-arg value="purushotham"></constructor-arg>
+		<constructor-arg value="1234"></constructor-arg>
+		<constructor-arg>
+			<!-- <list> <bean id="addressbean1" class="com.capg.pack1.Address"> <constructor-arg 
+				value="hyderabad"></constructor-arg> <constructor-arg value="Telangana"></constructor-arg> 
+				</bean> <bean id="addressbean2" class="com.capg.pack1.Address"> <constructor-arg 
+				value="vizag"></constructor-arg> <constructor-arg value="AndhraPradesh"></constructor-arg> 
+				</bean> </list> <map> <entry key ="one"> <bean id="addressbean1" class="com.capg.pack1.Address"> 
+				<constructor-arg value="hyderabad"></constructor-arg> <constructor-arg value="Telangana"></constructor-arg> 
+				</bean></entry> <entry key ="two"> <bean id="addressbean2" class="com.capg.pack1.Address"> 
+				<constructor-arg value="vizag"></constructor-arg> <constructor-arg value="AndhraPrade"></constructor-arg> 
+				</bean></entry> </map> -->
+
+			<set>
+				<bean id="addressbean1" class="com.capg.pack1.Address">
+					<constructor-arg value="hyderabad"></constructor-arg>
+					<constructor-arg value="Telangana"></constructor-arg>
+				</bean>
+				<bean id="addressbean2" class="com.capg.pack1.Address">
+					<constructor-arg value="vizag"></constructor-arg>
+					<constructor-arg value="AndhraPrade"></constructor-arg>
+				</bean>
+
+			</set>
+
+		</constructor-arg>
+	</bean>
+
+
+
+
+
+</beans>
